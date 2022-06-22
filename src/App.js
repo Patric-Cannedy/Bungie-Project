@@ -3,6 +3,7 @@ import React from 'react';
 import Header from './Components/Header';
 import Home from './Components/Pages/Home';
 import About from './Components/Pages/About';
+import DisplayItem from './Components/DisplayItem';
 import Contact from './Components/Pages/Contact'
 import { makeStyles } from '@mui/styles';
 import { Route, Switch } from 'react-router-dom';
@@ -15,9 +16,11 @@ function App() {
     <div className={classes.container}>
     <Header />
     <Switch>
-        <Route exact path='/' render={props => <Home {...props} />} />
-        <Route  path='/about'render={props => <About {...props} />} />
-        <Route  path='/contact'render={props => <Contact {...props} />} />
+        
+        <Route exact path='/home' render={props => <Home {...props} />} />
+        <Route path='/search' render={props => <DisplayItem {...props} />} />
+        <Route path='/about'render={props => <About {...props} />} />
+        <Route path='/contact'render={props => <Contact {...props} />} />
     </Switch>
     </div>
   );
