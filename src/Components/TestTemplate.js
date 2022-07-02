@@ -5,6 +5,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { Box, Grid } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import PropTypes from 'prop-types';
+
 const useStyles = makeStyles(theme => ({
     itemName: {
         paddingTop: '40px',

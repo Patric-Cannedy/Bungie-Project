@@ -13,6 +13,7 @@ import { withRouter } from 'react-router';
 import Button from '@mui/material/Button';
 import SearchBar from './SearchBar';
 import { Grid } from '@mui/material';
+import { useState, useEffect } from 'react';
 
 //materialui style
 const useStyles = makeStyles(theme => ({
@@ -36,22 +37,48 @@ const useStyles = makeStyles(theme => ({
 }));
 
 //header code
-const Header = props => {
-  const classes = useStyles();
-  const { history } = props;
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const handleMenu = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));  
+  const Header = ({showPage, togglePreview, input,data, itemIcon, itemName, handleChange, handleSubmit}) => {
 
-  const handleClose = pageURL => {
-    history.push(pageURL);
-    setAnchorEl(null);
-  };
+    const classes = useStyles();
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
+    const handleMenu = (event) => {
+      setAnchorEl(event.currentTarget);
+    };
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));  
+    const handleClose = pageURL => {
+      
+      setAnchorEl(null);
+    };
+    // const [data, setData] = useState({})
+    // const [input, setInput] = useState('');
+    // const [itemName, setItemName] = useState(null);
+    // const [itemIcon, setItemIcon] = useState(null);
 
+    // function itemSearch (input) {
+        
+    //     fetch('/search', {
+    //         method: 'POST',
+    //         mode: 'cors',
+    //         body: JSON.stringify({input}),
+    //         headers: { 'Content-Type': 'application/json' },
+    //     })
+    //     .then(res => res.json())
+    //     .then(data => setData(data), setItemName(data.name), setItemIcon(data.icon)) //update states here. use an use effect later
+    //     console.log(data)
+    //     console.log(itemName)
+        
+    // }
+
+    // const handleChange = (e) => {
+    //   setInput(e.target.value);
+    // }
+    // const handleSubmit = (e) => {
+    //     e.preventDefault()
+    //     itemSearch(input)
+    //     togglePreview();
+    // }
 //list to map items and streamline a bit
   const menuItems = [
     {
@@ -83,7 +110,8 @@ const Header = props => {
             </Typography>
           </Grid>
           <Grid item xs={6}>      
-            <SearchBar />
+            <SearchBar data={data} showPage={showPage} input={input} itemName={itemName} itemIcon={itemIcon} handleSubmit={handleSubmit} handleChange={handleChange}/>
+            {/* WRIIIIIIIIIIIIIIIITE HHHHHHHHHHHHEEEEEEEEEEEEEEEEERE */}
           </Grid>            
           <Grid item xs={2}>
                 </Grid>

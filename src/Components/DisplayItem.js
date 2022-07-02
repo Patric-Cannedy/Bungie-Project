@@ -1,12 +1,12 @@
 import React from 'react';
-import ItemSearch from './ItemSearch';
+import Item from './ItemTemplate';
 
-const DisplayItem = ({showPage, togglePreview, img, itemName}) => {
-
+const DisplayItem = ({showPage, togglePreview, itemIcon, itemName}) => {
     return(
-        <div >
+        <div style={{ display: showPage ? 'block' : 'none' }}>
+
             <div>
-            <ItemSearch img={img} itemName={itemName} togglePreview={togglePreview} showPage={showPage}/> 
+            <Item itemIcon={itemIcon} itemName={itemName} togglePreview={togglePreview} showPage={showPage}/> 
             </div>
         </div>
     );
@@ -14,3 +14,4 @@ const DisplayItem = ({showPage, togglePreview, img, itemName}) => {
 export default DisplayItem;
 
 // style={{ display: showPage ? 'block' : 'none' }} add back in to that first div
+//add displayItem somewhere
