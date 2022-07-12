@@ -1,70 +1,26 @@
-# Getting Started with Create React App
+# Bungie-Project
+A simple website that interacts with Bungie's Destiny 2 API and returns data. Users should be able to search for items from the database.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Status
+This project is currently in development. 
+The functionality it does have is the abiliy to send inputs and retrieve and display information.
 
-## Available Scripts
+## Technologies
+This project primarily runs off of Javascript using React.Js and MaterialUI as a CSS framework.
+Also uses other plugins for other small processing.
 
-In the project directory, you can run:
+## Setup
+Download or Clone the repo
+`npm install` to install all dependencies
+The app will start with the command `npm run start` and runs on port 5000 at `localhost:5000`.
+Once a request is sent it will log the repsonse object that is returned in the console.
 
-### `npm start`
+## My Approach and Reflections 
+As I continue to learn modern Javascript, I wanted to start a project that utilizes APIs and a CSS Framework.
+I chose the Destiny 2 API as it was something familiar to me. 
+The app is structured with App.js containing the main logic and setting the state so it can send the props downwards as needed. The site is still in development so many things are only coded for appearance however the header contains a functioning searchbar that will send inputs to my backend to retrieve the info. I have a results page that returns the item data for display.
+Due to time restraints, I scaled back the website and thus users cannot access information pertaining to their own characters.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+A big challenge I encountered was understanding the methods of which data can be destructured or looped through and understanding the management of state. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+In further iterations of my project, I plan to add asychronicity so data can load in the background while pages load, address the scale of the site by populating it with more components, and adding authentication so users can safely interact with the website.
