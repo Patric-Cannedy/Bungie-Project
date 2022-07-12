@@ -2,6 +2,8 @@ import React from 'react';
 import Tiles from '../Tiles';
 import { Box, Grid } from '@mui/material';
 import { makeStyles, ThemeProvider, useTheme } from '@mui/styles';
+import DisplayItem from '../DisplayItem';
+import { useState, useEffect } from 'react';
 
 const useStyles = makeStyles(theme => ({
     billBoardPadding: {
@@ -11,12 +13,13 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
-const Home = props => {
+const Home = ({showPage, togglePreview, itemIcon, itemName, flavorText, tierTypeName, typeDisplayName}) => {
     const theme = useTheme();
     const classes = useStyles();
 
     return(
         <ThemeProvider theme={theme}>
+            <div style={{ display: showPage ? 'none' : 'block' }}>
             <Grid container spacing={0}   style={{ minHeight: '100vh' }}>                    
                 <Grid item xs={2}>
                 </Grid>
@@ -68,7 +71,9 @@ const Home = props => {
                     </div>
                 </Grid>   
             </Grid>
-        </ThemeProvider>
+            </div>
+            <DisplayItem showPage={showPage} itemIcon={itemIcon} itemName={itemName} flavorText={flavorText} tierTypeName={tierTypeName} typeDisplayName={typeDisplayName}/>
+        </ThemeProvider>        
     )
 }
 

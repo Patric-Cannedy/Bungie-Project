@@ -111,7 +111,6 @@ const useStyles = makeStyles(theme => ({
           </Grid>
           <Grid item xs={6}>      
             <SearchBar data={data} showPage={showPage} input={input} itemName={itemName} itemIcon={itemIcon} handleSubmit={handleSubmit} handleChange={handleChange}/>
-            {/* WRIIIIIIIIIIIIIIIITE HHHHHHHHHHHHEEEEEEEEEEEEEEEEERE */}
           </Grid>            
           <Grid item xs={2}>
                 </Grid>

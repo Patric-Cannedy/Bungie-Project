@@ -47,37 +47,37 @@ const ItemSearch = ({showPage, togglePreview, img, itemName}) =>  {
         <ThemeProvider theme={theme}>
             {/* Item header and pic */}
             <Grid>
-            <Grid container spacing={0} style={{ minHeight: '100vh',  }}> 
-                    <Grid item xs={2}>
-                        </Grid>
-                    <Grid item xs={10} className={classes.itemName}>
-                        
-                      <Grid container spacing={0}>
-                        <Grid item>
-                          <Box sx={{ width: 128, height: 128,  }}>
-                            <Box sx={{ position:'absolute', width: 128}}>
-                              <Img alt="idk" src="https://www.bungie.net/common/destiny2_content/icons/0aff1f4463f6f44e9863370ab1ce6983.png" />
-                            </Box>
+              <Grid container spacing={0} style={{ minHeight: '100vh',  }}> 
+                      <Grid item xs={2}>
+                          </Grid>
+                      <Grid item xs={10} className={classes.itemName}>
                           
-                            <Img alt="complex" src="https://www.bungie.net/common/destiny2_content/icons/9976b41a3b121e9c191fa0b313eb6bf9.jpg" />
-                          </Box>                      
-                        </Grid>                                       
-                          <Grid item xs={12} sm container>
-                            <Grid item xs container direction="column" spacing={2}>
-                              <Grid item xs>
-                                <Typography gutterBottom variant="subtitle1" component="h1">
-                                  The Lament
-                                </Typography>
-                                <Typography variant="body2" gutterBottom>
-                                Exotic / Power / Sword
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                The last thing the Vex ever heard—the grinding wails of a vicious Banshee.
-                                </Typography>
+                        <Grid container spacing={0}>
+                          <Grid item>
+                            <Box sx={{ width: 128, height: 128,  }}>
+                              <Box sx={{ position:'absolute', width: 128}}>
+                                <Img alt="idk" src="https://www.bungie.net/common/destiny2_content/icons/0aff1f4463f6f44e9863370ab1ce6983.png" />
+                              </Box>
+                            
+                              <Img alt="complex" src="https://www.bungie.net/common/destiny2_content/icons/9976b41a3b121e9c191fa0b313eb6bf9.jpg" />
+                            </Box>                      
+                          </Grid>                                       
+                            <Grid item xs={12} sm container>
+                              <Grid item xs container direction="column" spacing={2}>
+                                <Grid item xs>
+                                  <Typography gutterBottom variant="subtitle1" component="h1">
+                                    The Lament
+                                  </Typography>
+                                  <Typography variant="body2" gutterBottom>
+                                  Exotic / Power / Sword
+                                  </Typography>
+                                  <Typography variant="body2" color="text.secondary">
+                                  The last thing the Vex ever heard—the grinding wails of a vicious Banshee.
+                                  </Typography>
+                                </Grid>
                               </Grid>
-                            </Grid>
-                          </Grid> 
-                        </Grid>
+                            </Grid> 
+                          </Grid>
                     </Grid>
    
                         {/*archetype info  */}
@@ -142,8 +142,8 @@ const ItemSearch = ({showPage, togglePreview, img, itemName}) =>  {
               <Grid container spacing={0}>
                 
                 <Grid item container>
-                <Grid item xs={12}></Grid>
-                <Grid item xs={12}></Grid>
+                  <Grid item xs={12}></Grid>
+                  <Grid item xs={12}></Grid>
                 
                 <Grid item xs={2}></Grid>
                     <Grid item xs={1}>
@@ -151,50 +151,48 @@ const ItemSearch = ({showPage, togglePreview, img, itemName}) =>  {
                         Lore
                       </Typography>
                    </Grid>
-          <Grid item container  spacing={0}> 
-          <Grid item xs={2}></Grid>
-            <Grid item xs={1}>
-              <div style={{overflow: "hidden", textOverflow: "ellipsis", width: '30rem'}}>
-              <Typography variant="body2" gutterBottom>
-              The Lament
-              <br></br><br></br>
-              The last thing the Vex ever heard—the grinding wails of a vicious Banshee.
-              <br></br><br></br>
-              FROM THE DESK OF CLOVIS BRAY
-              <br></br><br></br>
-              Dear… me.
-              <br></br><br></br>
-              For one who has delved into some of the greatest secrets science has to offer, you would think I'd find speaking with oneself rather monotonous. However, this very letter represents a successful culmination of all I have worked to achieve.
-              <br></br><br></br>
-              You'll have questions, no doubt. Hopefully by now, the AI has answered most of them.
-              <br></br><br></br>
-              Except one: Why?
-              <br></br><br></br>
-              Legacy, of course.
-              <br></br><br></br>
-              …Is the answer you'd expect from me. And rightfully so. It's not wrong, but it's only part of the story.
-              <br></br><br></br>
-              Frankly, I'm alarmed. For all my successes in scientific research, I have lacked any substantial findings of an afterlife. All I can find is death. An infinite nothingness. No remembering my loved ones, no seeing them again. No feeling their touch, or hearing their voices.
-              <br></br><br></br>
-              In my pursuit of eternity in this reality, I have foregone those niceties. Abandoned them. But you are a second chance. An opportunity to continue what I started, and hopefully in time, make amends with those I've wronged.
-              <br></br><br></br>
-              Attached to this letter, you will find a gift. A blade built just for you.
-              <br></br><br></br>
-              Keep it close. Never let anyone else take it. Stay alive.
-              <br></br><br></br>
-              For legacy.
-              </Typography>
-              </div>
-            </Grid>           
+                  <Grid item container  spacing={0}> 
+                  <Grid item xs={2}></Grid>
+                    <Grid item xs={1}>
+                      <div style={{overflow: "hidden", textOverflow: "ellipsis", width: '30rem'}}>
+                      <Typography variant="body2" gutterBottom>
+                      The Lament
+                      <br></br><br></br>
+                      The last thing the Vex ever heard—the grinding wails of a vicious Banshee.
+                      <br></br><br></br>
+                      FROM THE DESK OF CLOVIS BRAY
+                      <br></br><br></br>
+                      Dear… me.
+                      <br></br><br></br>
+                      For one who has delved into some of the greatest secrets science has to offer, you would think I'd find speaking with oneself rather monotonous. However, this very letter represents a successful culmination of all I have worked to achieve.
+                      <br></br><br></br>
+                      You'll have questions, no doubt. Hopefully by now, the AI has answered most of them.
+                      <br></br><br></br>
+                      Except one: Why?
+                      <br></br><br></br>
+                      Legacy, of course.
+                      <br></br><br></br>
+                      …Is the answer you'd expect from me. And rightfully so. It's not wrong, but it's only part of the story.
+                      <br></br><br></br>
+                      Frankly, I'm alarmed. For all my successes in scientific research, I have lacked any substantial findings of an afterlife. All I can find is death. An infinite nothingness. No remembering my loved ones, no seeing them again. No feeling their touch, or hearing their voices.
+                      <br></br><br></br>
+                      In my pursuit of eternity in this reality, I have foregone those niceties. Abandoned them. But you are a second chance. An opportunity to continue what I started, and hopefully in time, make amends with those I've wronged.
+                      <br></br><br></br>
+                      Attached to this letter, you will find a gift. A blade built just for you.
+                      <br></br><br></br>
+                      Keep it close. Never let anyone else take it. Stay alive.
+                      <br></br><br></br>
+                      For legacy.
+                      </Typography>
+                      </div>
+                    </Grid>           
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Grid>
           </Grid>
-        </Grid>
-      </Grid>
-            </Grid>
-            </Grid>
-            </ThemeProvider>
+        </ThemeProvider>
     )
 }
 
 export default ItemSearch
-
-//check the containers in the second portion. that may resolve the weird issues

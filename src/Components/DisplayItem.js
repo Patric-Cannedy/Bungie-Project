@@ -1,12 +1,12 @@
 import React from 'react';
 import Item from './ItemTemplate';
 
-const DisplayItem = ({showPage, togglePreview, itemIcon, itemName}) => {
+const DisplayItem = ({showPage, togglePreview, itemIcon, itemName, flavorText, tierTypeName, typeDisplayName}) => {
     return(
         <div style={{ display: showPage ? 'block' : 'none' }}>
 
             <div>
-            <Item itemIcon={itemIcon} itemName={itemName} togglePreview={togglePreview} showPage={showPage}/> 
+            <Item itemIcon={itemIcon} itemName={itemName} togglePreview={togglePreview} showPage={showPage} flavorText={flavorText} tierTypeName={tierTypeName} typeDisplayName={typeDisplayName}/> 
             </div>
         </div>
     );

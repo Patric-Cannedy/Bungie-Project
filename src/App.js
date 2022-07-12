@@ -1,9 +1,7 @@
-import './App.css';
 import React from 'react';
 import Header from './Components/Header';
 import Home from './Components/Pages/Home';
 import About from './Components/Pages/About';
-import DisplayItem from './Components/DisplayItem';
 import Contact from './Components/Pages/Contact'
 import { makeStyles } from '@mui/styles';
 import { Route, Switch } from 'react-router-dom';
@@ -22,6 +20,9 @@ function App() {
   const [itemName, setItemName] = useState(null);
   const [itemIcon, setItemIcon] = useState(null);
   const [flavorText, setFlavorText] = useState('')
+  const [tierTypeName, setTierTypeName] = useState('');
+  const [typeDisplayName, setTypeDisplayName] = useState('')
+
   function itemSearch (input) {
       
       fetch('/search', {
@@ -31,9 +32,14 @@ function App() {
           headers: { 'Content-Type': 'application/json' },
       })
       .then(res => res.json())
-      .then(data => setData(data), setItemName(data.name), setItemIcon(data.icon), setFlavorText(data.flavorText)) //update states here. use an use effect later
+      .then(data => setData(data))
+      setItemName(data.displayProperties["name"]); 
+      setItemIcon(data.displayProperties["icon"]);
+      setFlavorText(data["flavorText"]);
+      setTierTypeName(data.inventory["tierTypeName"])
+      setTypeDisplayName(data["itemTypeDisplayName"])
       console.log(data)
-      console.log(itemName)
+      console.log(data["itemTypeDisplayName"])
       
   }
 
@@ -45,20 +51,24 @@ function App() {
       itemSearch(input)
       togglePreview();
   }
+
   return (
     <div className={classes.container}>
-      
-    <Header itemIcon={itemIcon} itemName={itemName} togglePreview={togglePreview} showPage={showPage} input={input} handleChange={handleChange} handleSubmit={handleSubmit}/>
-    <Home/>
-    <DisplayItem showPage={showPage} itemIcon={itemIcon} itemName={itemName}/> 
+      <Header itemIcon={itemIcon} itemName={itemName} togglePreview={togglePreview} showPage={showPage} input={input} handleChange={handleChange} handleSubmit={handleSubmit}/>
       <Switch>
-        <Route exact path='/home' render={props => <Home {...props} />} />
-        <Route path='/search' render={props => <DisplayItem {...props} />} />
-        <Route path='/about'render={props => <About {...props} />} />
-        <Route path='/contact'render={props => <Contact {...props} />} />
-    </Switch>
+        <Route exact path='/'>
+          <Home showPage={showPage} itemIcon={itemIcon} itemName={itemName} flavorText={flavorText} tierTypeName={tierTypeName} typeDisplayName={typeDisplayName}/>
+        </Route>
+
+        <Route path='/about'>
+          <About />
+        </Route>
+
+        <Route path='/contact'>
+            <Contact />
+        </Route>
+      </Switch>
     </div>
   );
 }
-
 export default App;
