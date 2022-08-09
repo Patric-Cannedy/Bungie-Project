@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useHistory } from 'react-router';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -8,16 +9,16 @@ import MenuIcon from '@mui/icons-material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme, makeStyles, ThemeProvider } from '@mui/styles';
+import { useTheme, makeStyles, ThemeProvider, withThemeCreator } from '@mui/styles';
 import { withRouter } from 'react-router';
 import Button from '@mui/material/Button';
 import SearchBar from './SearchBar';
 import { Grid } from '@mui/material';
 import { useState, useEffect } from 'react';
 
+
 //materialui style
 const useStyles = makeStyles(theme => ({
-
   root: {
     flexGrow: 1
   },
@@ -33,11 +34,11 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     flex: 1,
     justifyContent: 'space-evenly'
-  }
+  },
 }));
 
 //header code
-  const Header = ({showPage, togglePreview, input,data, itemIcon, itemName, handleChange, handleSubmit}) => {
+  const Header = ({showPage, togglePreview, input, data, itemIcon, itemName, itemSearch, handleSubmit}) => {
 
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -46,40 +47,13 @@ const useStyles = makeStyles(theme => ({
       setAnchorEl(event.currentTarget);
     };
     const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));  
-    const handleClose = pageURL => {
-      
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+    let history = useHistory();  
+    const handleClose = (pageURL) => {
+      history.push(pageURL)
       setAnchorEl(null);
     };
-    // const [data, setData] = useState({})
-    // const [input, setInput] = useState('');
-    // const [itemName, setItemName] = useState(null);
-    // const [itemIcon, setItemIcon] = useState(null);
-
-    // function itemSearch (input) {
-        
-    //     fetch('/search', {
-    //         method: 'POST',
-    //         mode: 'cors',
-    //         body: JSON.stringify({input}),
-    //         headers: { 'Content-Type': 'application/json' },
-    //     })
-    //     .then(res => res.json())
-    //     .then(data => setData(data), setItemName(data.name), setItemIcon(data.icon)) //update states here. use an use effect later
-    //     console.log(data)
-    //     console.log(itemName)
-        
-    // }
-
-    // const handleChange = (e) => {
-    //   setInput(e.target.value);
-    // }
-    // const handleSubmit = (e) => {
-    //     e.preventDefault()
-    //     itemSearch(input)
-    //     togglePreview();
-    // }
-//list to map items and streamline a bit
+    
   const menuItems = [
     {
       menuTitle: 'Home',
@@ -87,11 +61,11 @@ const useStyles = makeStyles(theme => ({
     },
     {
       menuTitle: 'Contact',
-      pageURL: '/Contact',
+      pageURL: '/contact',
     },
     {
       menuTitle: 'About',
-      pageURL: '/About',
+      pageURL: '/about',
     },
   ]
 
@@ -101,20 +75,20 @@ const useStyles = makeStyles(theme => ({
     <div className={classes.root}>
       
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
+        <AppBar position="fixed" color="transparent" elevation={0} theme={theme}>
           
           <Toolbar>
           <Grid item xs={3}>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Bungie API Project
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} className={'icons'}>
+              Destiny API Search
             </Typography>
           </Grid>
           <Grid item xs={6}>      
-            <SearchBar data={data} showPage={showPage} input={input} itemName={itemName} itemIcon={itemIcon} handleSubmit={handleSubmit} handleChange={handleChange}/>
+            <SearchBar data={data} showPage={showPage} input={input} itemName={itemName} itemIcon={itemIcon} handleSubmit={handleSubmit} itemSearch={itemSearch} togglePreview={togglePreview}/>
           </Grid>            
           <Grid item xs={2}>
                 </Grid>
-              <div>
+              <div className={'icons'}>
                 {isMobile ? (   
                   <>         
                 <IconButton

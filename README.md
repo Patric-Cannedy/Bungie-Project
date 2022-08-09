@@ -10,8 +10,8 @@ This project primarily runs off of Javascript using React.Js and MaterialUI as a
 Also uses other plugins for other small processing.
 
 ## Setup
-Download or Clone the repo
-`npm install` to install all dependencies
+Download or Clone the repo.
+`npm install` to install all dependencies.
 The app will start with the command `npm run start` and runs on port 5000 at `localhost:5000`.
 Once a request is sent it will log the repsonse object that is returned in the console.
 

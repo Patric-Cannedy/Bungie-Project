@@ -34,7 +34,7 @@ const useStyles = makeStyles(theme => ({
   }));
 
 
-const Item = ({showPage, togglePreview, itemIcon, itemName, flavorText, tierTypeName, typeDisplayName}) =>  {
+const Item = ({itemIcon, itemName, flavorText, tierTypeName, typeDisplayName}) =>  {
   
   const Img = styled('img')({
     margin: 'auto',
