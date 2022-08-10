@@ -9,7 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme, makeStyles, ThemeProvider, withThemeCreator } from '@mui/styles';
+import { useTheme, makeStyles, ThemeProvider, } from '@mui/styles';
 import { withRouter } from 'react-router';
 import Button from '@mui/material/Button';
 import SearchBar from './SearchBar';
@@ -18,6 +18,8 @@ import { useState, useEffect } from 'react';
 
 
 //materialui style
+
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
@@ -35,10 +37,16 @@ const useStyles = makeStyles(theme => ({
     flex: 1,
     justifyContent: 'space-evenly'
   },
+  appBarTransparent: {
+    backgroundColor: 'transparent'
+  },
+  appBarSolid: {
+    backgroundColor: 'rgba(18,23,28,255)'
+  },
 }));
 
 //header code
-  const Header = ({showPage, togglePreview, input, data, itemIcon, itemName, itemSearch, handleSubmit}) => {
+  const Header = ({input, data, itemIcon, itemName, itemSearch, handleSubmit}) => {
 
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -53,7 +61,23 @@ const useStyles = makeStyles(theme => ({
       history.push(pageURL)
       setAnchorEl(null);
     };
-    
+  const [navBackground, setNavBackground] = useState('appBarTransparent');
+  const navRef = React.useRef()
+  navRef.current = navBackground
+  useEffect(() => {
+    const handleScroll = () => {
+        const show = window.scrollY > 310
+        if (show) {
+            setNavBackground('appBarSolid')
+        } else {
+            setNavBackground('appBarTransparent')
+        }
+    }
+    document.addEventListener('scroll', handleScroll)
+    return () => {
+        document.removeEventListener('scroll', handleScroll)
+    }
+}, [])
   const menuItems = [
     {
       menuTitle: 'Home',
@@ -75,16 +99,16 @@ const useStyles = makeStyles(theme => ({
     <div className={classes.root}>
       
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="fixed" color="transparent" elevation={0} theme={theme}>
+        <AppBar position="fixed"   className={classes[navRef.current]}>
           
           <Toolbar>
           <Grid item xs={3}>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} className={'icons'}>
-              Destiny API Search
+            <Typography variant="" component="div" sx={{ flexGrow: 1 }} className={'icons'}>
+              The Destiny Armory
             </Typography>
           </Grid>
           <Grid item xs={6}>      
-            <SearchBar data={data} showPage={showPage} input={input} itemName={itemName} itemIcon={itemIcon} handleSubmit={handleSubmit} itemSearch={itemSearch} togglePreview={togglePreview}/>
+            <SearchBar data={data} input={input} itemName={itemName} itemIcon={itemIcon} handleSubmit={handleSubmit} itemSearch={itemSearch}/>
           </Grid>            
           <Grid item xs={2}>
                 </Grid>

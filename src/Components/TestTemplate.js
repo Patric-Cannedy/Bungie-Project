@@ -196,3 +196,4 @@ const ItemSearch = ({showPage, togglePreview, img, itemName}) =>  {
 }
 
 export default ItemSearch
+

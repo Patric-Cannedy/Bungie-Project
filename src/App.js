@@ -4,19 +4,11 @@ import Home from './Components/Pages/Home';
 import About from './Components/Pages/About';
 import Contact from './Components/Pages/Contact';
 import Results from './Components/Results';
-import { makeStyles } from '@mui/styles';
 import { Route, Switch } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import "./CSS/styles.css"
 
-
-const useStyles = makeStyles({});
 
 function App() {
-  const [showPage, setShowPage] = useState(false);
-  const togglePreview = () => {
-    showPage ? setShowPage(false) : setShowPage(true);
-  }
   const [data, setData] = useState({})
   const [itemName, setItemName] = useState(null);
   const [itemIcon, setItemIcon] = useState(null);
@@ -44,13 +36,10 @@ function App() {
       return response
   }
 
-
-
-
-
   return (
     <Route>
-        <Header itemIcon={itemIcon} itemName={itemName} togglePreview={togglePreview} showPage={showPage} itemSearch={itemSearch}/>
+        <Header itemIcon={itemIcon} itemName={itemName} itemSearch={itemSearch}/>
+        <div></div>
         <Switch>
           <Route exact path='/' render={()=> <Home itemIcon={itemIcon} itemName={itemName} flavorText={flavorText} tierTypeName={tierTypeName} typeDisplayName={typeDisplayName}/>} />            
           <Route path='/about' render={()=> <About />}/>          

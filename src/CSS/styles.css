@@ -1,3 +1,5 @@
+/* Home/Landing page styling */
+
 ::-webkit-scrollbar {
     width: 1.15rem;
 }
@@ -26,6 +28,9 @@
 }
 .icons{
     color: seashell;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 .upper-container {
     min-height: 20px;
@@ -113,3 +118,5 @@ div.upper-bg {
 .subTitle{
     color: #479ce4
 }
+
+/* Results Page Styling */

@@ -2,7 +2,6 @@ import * as React from 'react';
 import { useState, useEffect, useRef } from 'react';
 import { useHistory } from 'react-router';
 import { Input, IconButton, InputAdornment } from '@mui/material';
-import { useTheme, makeStyles, ThemeProvider } from '@mui/styles';
 import SearchIcon from '@mui/icons-material/Search';
 import '../CSS/styles.css';
 
@@ -32,7 +31,7 @@ function SearchBar ({data, showPage, itemName, itemIcon, itemSearch}) {
 
         return (
             <div className={'icons'}>
-            <Input style={{backgroundColor:'#F5F5F5	', color:'#000000'}}  onChange={(e) => setInput(e.target.value)} placeholder='Search Database Here' fullWidth endAdornment={
+            <Input style={{backgroundColor:'#F5F5F5	', color:'#000000'}}  onChange={(e) => setInput(e.target.value)} placeholder='Search the Database' fullWidth endAdornment={
                 <InputAdornment position='end'>
                     <IconButton onClick={handleSubmit}>                    
                         <SearchIcon />
@@ -45,8 +44,3 @@ function SearchBar ({data, showPage, itemName, itemIcon, itemSearch}) {
 
 
 export default SearchBar;
-
-//Add all relevant item data as props
-//create a copy of my search page that populates the data
-//may have to adjust the showpage functions so it works now
-//make enter work too
