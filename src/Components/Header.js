@@ -46,7 +46,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 //header code
-  const Header = ({input, data, itemIcon, itemName, itemSearch, handleSubmit}) => {
+  const Header = ({input, data, itemIcon, itemName, itemSearch, handleSubmit, slotTypeHash, waterMark}) => {
 
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -108,7 +108,15 @@ const useStyles = makeStyles(theme => ({
             </Typography>
           </Grid>
           <Grid item xs={6}>      
-            <SearchBar data={data} input={input} itemName={itemName} itemIcon={itemIcon} handleSubmit={handleSubmit} itemSearch={itemSearch}/>
+            <SearchBar 
+              data={data} 
+              input={input} 
+              itemName={itemName} 
+              itemIcon={itemIcon} 
+              handleSubmit={handleSubmit} 
+              itemSearch={itemSearch}
+              slotTypeHash={slotTypeHash}
+              waterMark={waterMark}/>
           </Grid>            
           <Grid item xs={2}>
                 </Grid>
