@@ -1,11 +1,12 @@
 import React from 'react';
 import Header from './Components/Header';
+import { Footer } from './Components/footer';
 import Home from './Components/Pages/Home';
-import About from './Components/Pages/About';
 import Contact from './Components/Pages/Contact';
 import Results from './Components/Pages/Results';
+import { UnderCon } from './Components/Pages/dummyPg';
 import { Route, Switch } from 'react-router-dom';
-import { useState} from 'react';
+import { useState, useRef} from 'react';
 
 
 function App() {
@@ -40,14 +41,17 @@ function App() {
       console.log(slotTypeHash);
       return response
   }
+  const bottomRef = useRef();
+  const goToBott= () => {
+    bottomRef.current.scrollIntoView()
+}
 
   return (
     <Route>
         <Header 
-            itemSearch={itemSearch}/>
+            itemSearch={itemSearch} goToBott={goToBott}/>
         <Switch>
-          <Route exact path='/' render={()=> <Home />} />            
-          <Route path='/about' render={()=> <About />}/>          
+          <Route exact path='/' render={()=> <Home bottomRef={bottomRef}/>} />                    
           <Route path='/contact'render={()=> <Contact /> }/>
           <Route path='/results' render={()=> 
             <Results 
@@ -58,8 +62,10 @@ function App() {
             typeDisplayName={typeDisplayName}
             slotTypeHash={slotTypeHash}
             waterMark={waterMark}
-            screenShot={screenShot}/>}/>                 
+            screenShot={screenShot}/>}/>
+          <Route path='/comingsoon' render={()=> <UnderCon />}/>
         </Switch>
+        <Footer ref={bottomRef}/>
     </Route>
   );
 }

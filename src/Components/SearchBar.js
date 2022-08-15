@@ -7,7 +7,7 @@ import '../CSS/styles.css';
 
 
 
-function SearchBar ({data, showPage, itemName, itemIcon, itemSearch}) {
+function SearchBar ({itemSearch}) {
     const [input, setInput] = useState('');
     const ref = useRef(input);
 
@@ -20,7 +20,7 @@ function SearchBar ({data, showPage, itemName, itemIcon, itemSearch}) {
         setInput(newState);
     }
     let history = useHistory();
-   const handleSubmit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         updateState(input);
         history.push('/results');
@@ -31,7 +31,7 @@ function SearchBar ({data, showPage, itemName, itemIcon, itemSearch}) {
 
         return (
             <div className={'icons'}>
-            <Input style={{backgroundColor:'#F5F5F5	', color:'#000000'}}  onChange={(e) => setInput(e.target.value)} placeholder='Search the Database' fullWidth endAdornment={
+            <Input style={{backgroundColor:'#F5F5F5	', color:'#000000', borderRadius: '5px',}}  onChange={(e) => setInput(e.target.value)} placeholder='   Search the Database' fullWidth endAdornment={
                 <InputAdornment position='end'>
                     <IconButton onClick={handleSubmit}>                    
                         <SearchIcon />

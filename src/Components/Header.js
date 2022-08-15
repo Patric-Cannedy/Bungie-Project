@@ -1,9 +1,7 @@
 import * as React from 'react';
-import { useHistory } from 'react-router';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import MenuItem from '@mui/material/MenuItem';
@@ -15,14 +13,14 @@ import Button from '@mui/material/Button';
 import SearchBar from './SearchBar';
 import { Grid } from '@mui/material';
 import { useState, useEffect } from 'react';
-
+import { useHistory } from 'react-router';
 
 //materialui style
 
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   menuButton: {
     marginRight: theme.spacing(2)
@@ -38,15 +36,19 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'space-evenly'
   },
   appBarTransparent: {
-    backgroundColor: 'transparent'
+    paddingTop: '2.5vh',
+    backgroundColor: 'transparent',
+    minHeight: '10vh',
   },
   appBarSolid: {
-    backgroundColor: 'rgba(18,23,28,255)'
+    paddingTop: '2.5vh',
+    backgroundColor: 'rgba(18,23,28,255)',
+    minHeight: '10vh'
   },
 }));
 
 //header code
-  const Header = ({input, data, itemIcon, itemName, itemSearch, handleSubmit, slotTypeHash, waterMark}) => {
+  const Header = ({itemSearch, goToBott}) => {
 
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -58,9 +60,19 @@ const useStyles = makeStyles(theme => ({
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
     let history = useHistory();  
     const handleClose = (pageURL) => {
+      if (typeof pageURL!== 'string') {
+        let bottom = goToBott()
+        onclick=bottom
+      } else {
       history.push(pageURL)
       setAnchorEl(null);
+      }
     };
+    const altHome = (e) => {
+      e.preventDefault()
+      history.push('/');
+    }
+    
   const [navBackground, setNavBackground] = useState('appBarTransparent');
   const navRef = React.useRef()
   navRef.current = navBackground
@@ -85,38 +97,25 @@ const useStyles = makeStyles(theme => ({
     },
     {
       menuTitle: 'Contact',
-      pageURL: '/contact',
-    },
-    {
-      menuTitle: 'About',
-      pageURL: '/about',
+      pageURL: goToBott,
     },
   ]
 
+
   return (
   <ThemeProvider theme={theme}>
-    <Grid container spacing={0}>
-    <div className={classes.root}>
-      
+    <Grid container spacing={0} >
+    <div className={classes.root} >
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="fixed"   className={classes[navRef.current]}>
-          
+        <AppBar position="fixed" className={classes[navRef.current]}>
           <Toolbar>
-          <Grid item xs={3}>
-            <Typography variant="" component="div" sx={{ flexGrow: 1 }} className={'icons'}>
+          <Grid item xs={3} className={'btn-cont'}>
+            <Button className={'header-button'} sx={{fontSize: '20px', fontWeight: 'bold'}} onClick={altHome}>
               The Destiny Armory
-            </Typography>
+            </Button>
           </Grid>
           <Grid item xs={6}>      
-            <SearchBar 
-              data={data} 
-              input={input} 
-              itemName={itemName} 
-              itemIcon={itemIcon} 
-              handleSubmit={handleSubmit} 
-              itemSearch={itemSearch}
-              slotTypeHash={slotTypeHash}
-              waterMark={waterMark}/>
+            <SearchBar itemSearch={itemSearch} />
           </Grid>            
           <Grid item xs={2}>
                 </Grid>
@@ -163,7 +162,12 @@ const useStyles = makeStyles(theme => ({
                     {menuItems.map(menuItem => {
                       const {menuTitle, pageURL} = menuItem;
                       return ( 
-                      <Button variant='outLined' onClick={() => handleClose(pageURL)}>{menuTitle} </Button>
+                      <div className={'btn-cont'}>
+                        <Button                            
+                          onClick={() => handleClose(pageURL)} 
+                          className={'header-button'}> {menuTitle} 
+                        </Button>
+                      </div>
                       );
                   })}
                 </div></Grid>

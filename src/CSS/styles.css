@@ -26,7 +26,42 @@
         scrollbar-width: auto;
     }
 }
-.icons{
+
+.header-button {
+    color:seashell;
+    height: 10vh;
+    padding-right: 5vh;
+    padding-left: 5vh
+
+}
+
+.header-button::after{
+    content: '';
+    position: absolute;
+    height: 3px;
+    background: #f9a406;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    transform: scaleX(0);
+    transition: transform 500ms ease;
+}
+
+.btn-cont:hover .header-button::after {
+    transform: scaleX(1);
+}
+
+
+a:link {
+    text-decoration: none;
+  }
+
+a:visited {
+    text-decoration: none;
+    color: #f5f5f5;
+}
+
+.h-icons{
     color: seashell;
     font-size: 2rem;
     text-transform: uppercase;
@@ -66,36 +101,35 @@ div.upper-bg {
     margin: 25px;
 }
 
-
 .pinned1 {
     background-image: url("../images/Raid-reag-Ausrüstung-Destiny-2-Titel.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
     background-position: center;
-    color: #f5f5f5;
-    display: inline-block;
-    font-size: 2rem;
-    text-transform: uppercase;
-    font-weight: bold;
-
 }
 
 .pinned2 {
     background-image: url("../images/Destiny-2-Glaive-Weapon-Crafting-1024x576.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
     background-position: 15% 100%;
-    color: #f5f5f5;
-    font-size: 2rem;
-    text-transform: uppercase;
-    font-weight: bold;
 }
 
 .pinned3 {
     background-image: url("../images/destiny-2-crucible-ssbm.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
     background-position: 70%;
+}
+
+.pinned1, .pinned2, .pinned3 {
+    background-repeat: no-repeat;
+    background-size: cover;    
+    border-radius: 10px;
+    display: inline-block;
+    transition: transform 500ms ease;
+    cursor: pointer;
+}
+
+.pinned1:hover,.pinned2:hover,.pinned3:hover {
+    transform: scale(1.01);
+}
+
+.pinned1, .pinned2, .pinned3 a{
     color: #f5f5f5;
     font-size: 2rem;
     text-transform: uppercase;
@@ -103,10 +137,14 @@ div.upper-bg {
 }
 
 .thumbnails{
-    /* background-image: url("../images/HD-wallpaper-destiny-popular-game-destiny-red-logo-red-carbon-fiber-background-destiny-logo-destiny-emblem.jpg"); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+
+.overlay{
+    position: relative;
+    
 }
 
 .title{
@@ -116,7 +154,75 @@ div.upper-bg {
 }
 
 .subTitle{
-    color: #479ce4
+    color: #f5f5f5;
 }
 
-/* Results Page Styling */
+.footItems{
+    padding-top: 10vh;
+    padding-bottom: 15vh;
+}
+
+.fTitle{
+    margin-top: -2vh;
+    margin-bottom: -2vh;
+    color: #f5f5f5;
+    padding-bottom: 1vh;     
+ }
+
+ .fSubTitle a:hover{
+    text-decoration: underline;
+ }
+
+ .fSubTitle{
+    color: #479ce4;
+    display: flex;
+    align-items: flex-end;
+    font-size: 15px;
+
+}
+
+.fSubTitle a{
+    color: #f5f5f5;
+}
+.footer-content{
+    padding-left: 30vh;
+    padding-right: 30vh;
+}
+
+.constr-cont{
+    padding-bottom: 10vh;
+}
+.construction {
+    background-image: url('../images/pujnqysTeTjpQYfqCQNNhb.jpg');
+    margin-top: 30vh;
+    min-width: 30vw;
+    min-height: 30vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    text-align: center;
+    animation-name: rng;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: linear; 
+
+}
+
+@keyframes rng {
+	0% {
+		color: #55eeda;
+	}
+	25% {
+		color: #6bd43b;
+	}
+	50% {
+		color: #c25beb;
+	}
+	75% {
+		color: #ffd97d;
+	}
+	100% {
+		color: #ec1e1e;
+	}
+}

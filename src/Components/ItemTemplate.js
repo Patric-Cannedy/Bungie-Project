@@ -52,7 +52,8 @@ const useStyles = makeStyles(theme => ({
     },
     itemScreenShot:{
       maxWidth: '54vw',
-      display: 'center'
+      display: 'center',
+      paddingBottom: '15vh'
     },
   }));
 
@@ -89,7 +90,7 @@ const Item = ({
   
   return (
       <ThemeProvider theme={theme}>
-          <div style={{ minHeight: '5vh',  }}></div>
+          <div style={{ minHeight: '5vh',  paddingTop: '5vh'}}></div>
           {/* Item header and pic */}
           <Grid>
             <Grid container spacing={0} style={{ minHeight: '10vh',  }}> 
@@ -104,7 +105,7 @@ const Item = ({
                         
                       </Box>
                     
-                      <Img alt="" src={"https://www.bungie.net"+waterMark }/>
+                      <Img className={'overlay'} alt="" src={"https://www.bungie.net"+waterMark}/>
                     </Box>                      
                   </Grid>                                       
                     <Grid item xs={12} sm container>
