@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/Bungie-Project/static/css/main.a7bdca09.css",
+    "main.js": "/Bungie-Project/static/js/main.8b51e36f.js",
+    "static/media/pujnqysTeTjpQYfqCQNNhb.jpg": "/Bungie-Project/static/media/pujnqysTeTjpQYfqCQNNhb.42f094154ac4b506c74f.jpg",
+    "static/media/17-Destiny-2-Black-Armory-Wallpapers-on-WallpaperSafari.jpg": "/Bungie-Project/static/media/17-Destiny-2-Black-Armory-Wallpapers-on-WallpaperSafari.6792936a919611ffa89c.jpg",
+    "static/media/Raid-reag-Ausrüstung-Destiny-2-Titel.jpg": "/Bungie-Project/static/media/Raid-reag-Ausrüstung-Destiny-2-Titel.8e743be0da843601a57d.jpg",
+    "static/media/destiny-2-crucible-ssbm.jpg": "/Bungie-Project/static/media/destiny-2-crucible-ssbm.f7dd879310225947e351.jpg",
+    "static/media/destiny-2-community-manager.jpg": "/Bungie-Project/static/media/destiny-2-community-manager.2d3c227c98d3550cb5d6.jpg",
+    "static/media/Destiny-2-Glaive-Weapon-Crafting-1024x576.jpg": "/Bungie-Project/static/media/Destiny-2-Glaive-Weapon-Crafting-1024x576.90c8ffba82e1af145d69.jpg",
+    "static/media/HD-wallpaper-destiny-popular-game-destiny-red-logo-red-carbon-fiber-background-destiny-logo-destiny-emblem.jpg": "/Bungie-Project/static/media/HD-wallpaper-destiny-popular-game-destiny-red-logo-red-carbon-fiber-background-destiny-logo-destiny-emblem.fa27850eff50abe4763f.jpg",
+    "static/media/istockphoto-1251362621-170667a.jpg": "/Bungie-Project/static/media/istockphoto-1251362621-170667a.a5560ba81d253c9a0f70.jpg",
+    "index.html": "/Bungie-Project/index.html",
+    "main.a7bdca09.css.map": "/Bungie-Project/static/css/main.a7bdca09.css.map",
+    "main.8b51e36f.js.map": "/Bungie-Project/static/js/main.8b51e36f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a7bdca09.css",
+    "static/js/main.8b51e36f.js"
+  ]
+}
