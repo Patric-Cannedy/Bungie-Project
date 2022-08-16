@@ -51,7 +51,7 @@ function App() {
         <Header 
             itemSearch={itemSearch} goToBott={goToBott}/>
         <Switch>
-          <Route exact path='/' render={()=> <Home bottomRef={bottomRef}/>} />                    
+          <Route exact path='/Bungie-Project' render={()=> <Home bottomRef={bottomRef}/>} />                    
           <Route path='/contact'render={()=> <Contact /> }/>
           <Route path='/results' render={()=> 
             <Results 

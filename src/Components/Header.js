@@ -68,7 +68,7 @@ const useStyles = makeStyles(theme => ({
     };
     const altHome = (e) => {
       e.preventDefault()
-      history.push('/');
+      history.push('/Bungie-Project');
     }
     
   const [navBackground, setNavBackground] = useState('appBarTransparent');
@@ -91,7 +91,7 @@ const useStyles = makeStyles(theme => ({
   const menuItems = [
     {
       menuTitle: 'Home',
-      pageURL: '/',
+      pageURL: '/Bungie-Project',
     },
     {
       menuTitle: 'Contact',

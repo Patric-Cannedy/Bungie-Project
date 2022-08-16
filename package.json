@@ -1,5 +1,5 @@
 {
-  "homepage": "https://Patric-Cannedy.github.io",
+  "homepage": "https://Patric-Cannedy.github.io/Bungie-Project/",
   "name": "bungie-api-project",
   "version": "0.1.0",
   "private": true,
@@ -26,7 +26,6 @@
     "eject": "react-scripts eject",
     "serverStart": "nodemon app.js",
     "dev": "npm run start & npm run serverStart"
-
   },
   "proxy": "http://localhost:3000",
   "eslintConfig": {
