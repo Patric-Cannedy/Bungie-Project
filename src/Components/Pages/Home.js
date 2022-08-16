@@ -55,15 +55,21 @@ const Home = ({bottomRef}) => {
                     </div>
                     {/* ADD links to these */}
                     <Grid container spacing={1} style={{minHeight: '40vh', marginTop: '2rem', marginLeft: '.001rem'}} className={'news-content'}> 
-                        <Grid item xs={1} sx={{minWidth: '35vw', }} className={'pinned1'} onClick={go}>
-                                <a href='/comingsoon'>Raid Weapons</a>
-                            </Grid>
-                        <Grid item xs={1} sx={{minWidth: '18.3vw'}} className={'pinned2'} onClick={go}>
-                                <a href='/comingsoon'>Witch Queen Weapons</a>
-                            </Grid>
-                        <Grid item xs={1} direction='column' sx={{minWidth: '18.3vw'}} className={'pinned3'} onClick={go}>
-                                <a href='/comingsoon'>Trials of Osiris Weapons</a>
-                            </Grid>
+                        <Grid item xs={1} sx={{minWidth: '25vw', }} className={'pinned1'} onClick={go}>
+                                <a href='/comingsoon'>
+                                    <div className='pinned-title'>Raid Weapons</div>
+                                </a>
+                        </Grid>
+                        <Grid item xs={1} sx={{minWidth: '15vw'}} className={'pinned2'} onClick={go}>
+                                <a href='/comingsoon'>
+                                    <div className='pinned-title'>New Weapons</div>
+                                </a>
+                        </Grid>
+                        <Grid item xs={1}  sx={{minWidth: '15vw'}} className={'pinned3'} onClick={go}>
+                                <a href='/comingsoon'>
+                                    <div className='pinned-title'>Trials Weapons</div>
+                                </a>
+                        </Grid>
                     </Grid>
                 </div>
                 <div className={'middle-container'}>

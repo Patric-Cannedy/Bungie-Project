@@ -1,4 +1,5 @@
 {
+  "homepage": "https://Patric-Cannedy.github.io",
   "name": "bungie-api-project",
   "version": "0.1.0",
   "private": true,
@@ -17,12 +18,15 @@
     "react-scripts": "^5.0.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build",
     "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "serverStart": "nodemon app.js",
     "dev": "npm run start & npm run serverStart"
+
   },
   "proxy": "http://localhost:3000",
   "eslintConfig": {
@@ -42,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
