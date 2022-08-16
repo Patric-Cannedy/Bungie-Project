@@ -15,8 +15,6 @@ import { Grid } from '@mui/material';
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router';
 
-//materialui style
-
 
 const useStyles = makeStyles(theme => ({
   root: {

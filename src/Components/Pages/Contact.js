@@ -1,7 +1,6 @@
-const Contact = props => {
+const Contact = ()=> {
     return(
         <div>
-            My Contact Page
         </div>
     )
 }

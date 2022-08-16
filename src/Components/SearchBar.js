@@ -10,22 +10,21 @@ import '../CSS/styles.css';
 function SearchBar ({itemSearch}) {
     const [input, setInput] = useState('');
     const ref = useRef(input);
-
-    useEffect(()=>{
-        console.log(input)
-    },[input])
-
-    const updateState = (newState) => {
-        ref.current = newState;
-        setInput(newState);
-    }
+    // useEffect(()=>{
+    //     console.log(input)  
+    // },[input])
+    // const updateState = (newState) => {
+    //     ref.current = newState;
+    //     setInput(newState);
+    // }
     let history = useHistory();
     const handleSubmit = (e) => {
         e.preventDefault();
-        updateState(input);
-        history.push('/results');
+        itemSearch(input);
+        history.push('/results')
     }
     useEffect(()=> {
+        console.log(input)
         itemSearch(input)
       },[input])
 

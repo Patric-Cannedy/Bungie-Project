@@ -90,8 +90,8 @@ const Item = ({
   
   return (
       <ThemeProvider theme={theme}>
-          <div style={{ minHeight: '5vh',  paddingTop: '5vh'}}></div>
-          {/* Item header and pic */}
+          <div style={{ minHeight: '5vh',  paddingTop: '5vh'}}>
+          </div>
           <Grid>
             <Grid container spacing={0} style={{ minHeight: '10vh',  }}> 
               <Grid item xs={2}>
@@ -156,4 +156,3 @@ const Item = ({
 
 export default Item
 
-//check the containers in the second portion. that may resolve the weird issues
