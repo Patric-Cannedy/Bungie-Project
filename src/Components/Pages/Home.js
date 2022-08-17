@@ -41,7 +41,7 @@ const Home = ({bottomRef}) => {
         <div className={'main-content'}>
             <div className={'upper-container'}>
                 <div className={'upper-bg'}>
-                    <Grid container spacing={0} style={{minHeight: '70vh'}}>
+                    <Grid container spacing={0} >
                     <ThemeProvider theme={theme}>
                         <div>
                             {/* Put animation here later */}

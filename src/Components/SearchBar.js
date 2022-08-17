@@ -28,14 +28,26 @@ function SearchBar ({itemSearch}) {
         itemSearch(input)
       },[input])
 
+    const onEnterPress = (e) => {
+        if(e.keyCode === 13 && e.shiftKey === false) {
+          e.preventDefault();
+          itemSearch(input);
+          history.push('/results')
+        }
+      }
+
         return (
             <div className={'icons'}>
-            <Input style={{backgroundColor:'#F5F5F5	', color:'#000000', borderRadius: '5px',}}  onChange={(e) => setInput(e.target.value)} placeholder='   Search the Database' fullWidth endAdornment={
-                <InputAdornment position='end'>
-                    <IconButton onClick={handleSubmit}>                    
-                        <SearchIcon />
-                    </IconButton>
-                </InputAdornment>} />
+                <Input style={{backgroundColor:'#F5F5F5	', color:'#000000', borderRadius: '5px',}} 
+                    onKeyDown={onEnterPress} 
+                    onChange={(e) => setInput(e.target.value)} 
+                    placeholder='Search the Database' 
+                    fullWidth endAdornment={
+                        <InputAdornment position='end'>
+                            <IconButton onClick={handleSubmit} >                    
+                                <SearchIcon />
+                            </IconButton>
+                        </InputAdornment>} />
             </div>
         );
 }

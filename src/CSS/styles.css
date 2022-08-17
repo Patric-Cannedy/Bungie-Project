@@ -76,6 +76,7 @@ div.upper-bg {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left;
+    min-height: 70vh;
 }
 
 .middle-container {
@@ -184,7 +185,7 @@ div.upper-bg {
     color: #479ce4;
     display: flex;
     align-items: flex-end;
-    font-size: 15px;
+    font-size: 13px;
 
 }
 
@@ -235,7 +236,7 @@ div.upper-bg {
 }
 
 @media(max-width: 600px) {
-    a, h1, h4, .pinned-title {
+    a, h1, .pinned-title {
         font-size: 1rem;
     }
 
@@ -250,7 +251,7 @@ div.upper-bg {
     .middle-container{
         padding-left: 5vh;
         padding-right: 3vw;
-        width: 100%;
+        width: fit-content;
     }
     .thumbnails{
         min-width: 40vw;
@@ -260,6 +261,22 @@ div.upper-bg {
     }
     .title{
         padding-bottom: 1vh;
+        font-size: .6rem;
+    }
+    .footItems{
+        min-width: 90vw;
+        font-size: .6rem;
+        margin-left: -25.5vh;
+    }
+    .footItems a{
+        font-size: .4rem;
+    }
+    div.upper-bg {
+        min-height: 32vh;
+    }
+    .header-button{
+        font-size: 1rem;
+        padding-left: 2vw;
     }
   }
   

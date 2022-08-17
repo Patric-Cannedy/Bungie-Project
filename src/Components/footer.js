@@ -16,24 +16,24 @@ export const Footer = () => {
         {
             title: 'Phone',
             subTitle: '+1 719-200-7483',
-            icon: <PhoneAndroidIcon sx={{fontSize: '15px'}}/>,
+            icon: <PhoneAndroidIcon sx={{fontSize: '13px'}}/>,
         },
         {
             title: 'Portfolio',
             subTitle: 'github.com/Patric-Cannedy',
             url: 'https://github.com/Patric-Cannedy',
-            icon: <GitHubIcon sx={{fontSize: '15px'}}/>,
+            icon: <GitHubIcon sx={{fontSize: '13px'}}/>,
         },
         {
             title: 'LinkedIn',
             subTitle: 'Pcannedy',
             url: 'https://www.linkedin.com/in/Pcannedy/',
-            icon: <LinkedInIcon sx={{fontSize: '15px'}}/>,
+            icon: <LinkedInIcon sx={{fontSize: '13px'}}/>,
         }
     ]
     return (
         <div className={'footer-content'}>
-            <Grid container spacing={1} className={'footItems'} style={{minHeight: '20vh', borderTop: '1px rgb(107, 106, 106) solid',}}>
+            <Grid container spacing={1} className={'footItems'} sx={{minHeight: '20vh', borderTop: '1px rgb(107, 106, 106) solid',}}>
                 {footerItems.map(footerItem => {
                     const {title, url, subTitle, icon} = footerItem;
                         return (
