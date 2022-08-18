@@ -21,7 +21,7 @@ function SearchBar ({itemSearch}) {
     const handleSubmit = (e) => {
         e.preventDefault();
         itemSearch(input);
-        history.push('/results')
+        history.push('/Bungie-Project/results')
     }
     useEffect(()=> {
         console.log(input)
@@ -32,7 +32,7 @@ function SearchBar ({itemSearch}) {
         if(e.keyCode === 13 && e.shiftKey === false) {
           e.preventDefault();
           itemSearch(input);
-          history.push('/results')
+          history.push('/Bungie-Project/results')
         }
       }
 

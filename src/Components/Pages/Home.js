@@ -33,7 +33,7 @@ const Home = ({bottomRef}) => {
     let history = useHistory();
     const go = (e) => {
         e.preventDefault();
-        history.push('/comingsoon');
+        history.push('/Bungie-Project/comingsoon');
     }
 
 

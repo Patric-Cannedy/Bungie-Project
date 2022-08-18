@@ -22,7 +22,7 @@ function App() {
 
   async function itemSearch(input){
       
-     const response = await fetch('/search', {
+     const response = await fetch('/Bungie-Project', {
           method: 'POST',
           mode: 'cors',
           body: JSON.stringify({input}),
@@ -52,8 +52,8 @@ function App() {
             itemSearch={itemSearch} goToBott={goToBott}/>
         <Switch>
           <Route exact path='/Bungie-Project' render={()=> <Home bottomRef={bottomRef}/>} />                    
-          <Route path='/contact'render={()=> <Contact /> }/>
-          <Route path='/results' render={()=> 
+          <Route path='/Bungie-Project/contact'render={()=> <Contact /> }/>
+          <Route path='/Bungie-Project/results' render={()=> 
             <Results 
             itemIcon={itemIcon} 
             itemName={itemName} 
@@ -63,7 +63,7 @@ function App() {
             slotTypeHash={slotTypeHash}
             waterMark={waterMark}
             screenShot={screenShot}/>}/>
-          <Route path='/comingsoon' render={()=> <UnderCon />}/>
+          <Route path='/Bungie-Project/comingsoon' render={()=> <UnderCon />}/>
         </Switch>
         <Footer ref={bottomRef}/>
     </Route>
