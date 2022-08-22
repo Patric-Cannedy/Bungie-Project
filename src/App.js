@@ -7,6 +7,7 @@ import Results from './Components/Pages/Results';
 import { UnderCon } from './Components/Pages/dummyPg';
 import { Route, Switch } from 'react-router-dom';
 import { useState, useRef} from 'react';
+import { it } from 'date-fns/locale';
 
 
 function App() {
@@ -22,11 +23,12 @@ function App() {
 
   async function itemSearch(input){
       
-     const response = await fetch('/Bungie-Project', {
+     const response = await fetch('https://bungie-manifest.herokuapp.com', {
           method: 'POST',
           mode: 'cors',
+          // credentials: 'include',
           body: JSON.stringify({input}),
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json', },
       })
       .then(res => res.json())
       .then(data => setData(data))
@@ -38,7 +40,7 @@ function App() {
       setWaterMark(data["iconWatermark"]);
       setFlavorText(data["flavorText"]);
       setScreenShot(data["screenshot"]);
-      console.log(slotTypeHash);
+      console.log(itemName);
       return response
   }
   const bottomRef = useRef();
