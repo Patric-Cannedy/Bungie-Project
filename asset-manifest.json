@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Bungie-Project/static/css/main.453db4c2.css",
-    "main.js": "/Bungie-Project/static/js/main.3e945189.js",
+    "main.js": "/Bungie-Project/static/js/main.993d7802.js",
     "static/media/pujnqysTeTjpQYfqCQNNhb.jpg": "/Bungie-Project/static/media/pujnqysTeTjpQYfqCQNNhb.42f094154ac4b506c74f.jpg",
     "static/media/17-Destiny-2-Black-Armory-Wallpapers-on-WallpaperSafari.jpg": "/Bungie-Project/static/media/17-Destiny-2-Black-Armory-Wallpapers-on-WallpaperSafari.6792936a919611ffa89c.jpg",
     "static/media/Raid-reag-Ausrüstung-Destiny-2-Titel.jpg": "/Bungie-Project/static/media/Raid-reag-Ausrüstung-Destiny-2-Titel.8e743be0da843601a57d.jpg",
@@ -12,10 +12,10 @@
     "static/media/istockphoto-1251362621-170667a.jpg": "/Bungie-Project/static/media/istockphoto-1251362621-170667a.a5560ba81d253c9a0f70.jpg",
     "index.html": "/Bungie-Project/index.html",
     "main.453db4c2.css.map": "/Bungie-Project/static/css/main.453db4c2.css.map",
-    "main.3e945189.js.map": "/Bungie-Project/static/js/main.3e945189.js.map"
+    "main.993d7802.js.map": "/Bungie-Project/static/js/main.993d7802.js.map"
   },
   "entrypoints": [
     "static/css/main.453db4c2.css",
-    "static/js/main.3e945189.js"
+    "static/js/main.993d7802.js"
   ]
 }
